@@ -1,0 +1,77 @@
+{
+    "dataset": {
+        "tabular_shapes": {
+            "train": [
+                191,
+                45
+            ],
+            "val": [
+                41,
+                45
+            ],
+            "test": [
+                41,
+                45
+            ]
+        },
+        "sequential_shapes": {
+            "train": [
+                181,
+                12,
+                45
+            ],
+            "val": [
+                39,
+                12,
+                45
+            ],
+            "test": [
+                39,
+                12,
+                45
+            ]
+        }
+    },
+    "baseline_xgboost": {
+        "model_type": "MultiOutput(XGBRegressor)",
+        "test_metrics": {
+            "t+1": {
+                "MAE": 114.1603,
+                "RMSE": 193.8969,
+                "R2": 0.1614
+            },
+            "t+3": {
+                "MAE": 99.4417,
+                "RMSE": 177.0846,
+                "R2": 0.2301
+            }
+        }
+    },
+    "deep_learning_lstm": {
+        "model_architecture": "2-layer LSTM -> Dropout(0.2) -> Linear(3)",
+        "target_horizons": [
+            "t+5min",
+            "t+10min",
+            "t+15min"
+        ],
+        "test_metrics": {
+            "t+5min": {
+                "MAE": 69.211,
+                "RMSE": 121.1045,
+                "R2": 0.6896
+            },
+            "t+10min": {
+                "MAE": 85.7383,
+                "RMSE": 146.6185,
+                "R2": 0.5328
+            },
+            "t+15min": {
+                "MAE": 99.9391,
+                "RMSE": 164.5039,
+                "R2": 0.3843
+            }
+        },
+        "best_train_loss": 0.07400586099053423,
+        "best_val_loss": 0.4727407656610012
+    }
+}

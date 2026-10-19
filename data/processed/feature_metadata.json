@@ -1,0 +1,123 @@
+{
+    "feature_columns": [
+        "total_flows",
+        "attack_count",
+        "risk_score",
+        "byte_volume",
+        "distinct_src_ips",
+        "syn_flag_count",
+        "failed_connections",
+        "time_of_day_sin",
+        "time_of_day_cos",
+        "day_of_week_sin",
+        "day_of_week_cos",
+        "attack_count_lag_1",
+        "attack_count_lag_2",
+        "attack_count_lag_3",
+        "attack_count_lag_6",
+        "attack_count_lag_12",
+        "risk_score_lag_1",
+        "risk_score_lag_2",
+        "risk_score_lag_3",
+        "risk_score_lag_6",
+        "risk_score_lag_12",
+        "total_flows_lag_1",
+        "total_flows_lag_2",
+        "total_flows_lag_3",
+        "byte_volume_lag_1",
+        "byte_volume_lag_2",
+        "byte_volume_lag_3",
+        "syn_flag_count_lag_1",
+        "syn_flag_count_lag_2",
+        "syn_flag_count_lag_3",
+        "failed_connections_lag_1",
+        "failed_connections_lag_2",
+        "failed_connections_lag_3",
+        "attack_count_roll_mean_3",
+        "attack_count_roll_std_3",
+        "attack_count_roll_mean_6",
+        "attack_count_roll_std_6",
+        "attack_count_roll_mean_12",
+        "attack_count_roll_std_12",
+        "risk_score_roll_mean_3",
+        "risk_score_roll_std_3",
+        "risk_score_roll_mean_6",
+        "risk_score_roll_std_6",
+        "risk_score_roll_mean_12",
+        "risk_score_roll_std_12"
+    ],
+    "num_features": 45,
+    "sequence_length": 12,
+    "target_horizons": [
+        1,
+        2,
+        3
+    ],
+    "target_names": [
+        "attack_count_t1",
+        "attack_count_t2",
+        "attack_count_t3"
+    ],
+    "split_ratios": {
+        "train": 0.7,
+        "val": 0.15,
+        "test": 0.15
+    },
+    "shapes": {
+        "tabular": {
+            "X_train": [
+                191,
+                45
+            ],
+            "y_train": [
+                191,
+                3
+            ],
+            "X_val": [
+                41,
+                45
+            ],
+            "y_val": [
+                41,
+                3
+            ],
+            "X_test": [
+                41,
+                45
+            ],
+            "y_test": [
+                41,
+                3
+            ]
+        },
+        "sequential_3d": {
+            "X_train": [
+                181,
+                12,
+                45
+            ],
+            "y_train": [
+                181,
+                3
+            ],
+            "X_val": [
+                39,
+                12,
+                45
+            ],
+            "y_val": [
+                39,
+                3
+            ],
+            "X_test": [
+                39,
+                12,
+                45
+            ],
+            "y_test": [
+                39,
+                3
+            ]
+        }
+    }
+}
